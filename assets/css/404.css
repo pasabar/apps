@@ -20,7 +20,7 @@
 
 .four_zero_four_bg
 {
-    background: url('./bg.gif');
+    background: url('/assets/images/bg.gif');
     height: 400px;
     background-position: center;
 }
@@ -52,9 +52,4 @@ a:hover
 {
     text-decoration: none;
     color: #fff;
-}
-
-.four_zero_four_bg img {
-  max-width: 100%;
-  height: auto;
 }
