@@ -7,7 +7,7 @@ export default function PostSignUp() {
     "https://us-central1-pasabar.cloudfunctions.net/pasabar";
   let tokenkey = "token";
   let tokenvalue =
-    "29ececb1a7801ec3f1f07d55cd05f665f18d187b252931162a21e99a11615d1f9bcdb836ee93d7a04986d7fc596dadbe9e80ec61e3530acdeb47b15fdbe6c7e7";
+    "8ce70c6acb9b77fa77598219cea3e2a118f807cf799ef52785db5e823a4840ee926202194480929bce0c8638a004d5436e04e03c7bb9633d84ce516904b88953";
   let datainjson = {
     username: getValue("username"),
     password: getValue("password"),
@@ -18,4 +18,15 @@ export default function PostSignUp() {
 function responseData(result) {
   setInner("pesan", result.message);
   setCookieWithExpireHour("token", result.token, 2);
+
+  if (result.message === "Selamat Datang") {
+    // Jika pesan adalah "Selamat Datang", arahkan ke halaman dashboard.
+    window.location.href = "dashboard.html"; // Gantilah "error.html" dengan halaman error yang sesuai.
+  } else if (result.message === "Password Salah") {
+    // Jika pesan kesalahan adalah "Password salah", arahkan ke halaman error.
+    window.location.href = "404.html";
+  } else {
+    // Penanganan lainnya (pesan kesalahan lainnya)
+    window.location.href = "register.html";
+  }
 }
