@@ -156,3 +156,13 @@
   themeCheck();
   /* ========  themeSwitcher End ========= */
 })();
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Simulate content loading delay for demonstration purposes
+  setTimeout(function() {
+    // Hide the loading screen
+    document.getElementById("loading-screen").style.display = "none";
+    // Show the content
+    document.getElementById("content").style.display = "block";
+  }, 2000); // Adjust the delay time as needed
+});
