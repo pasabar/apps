@@ -3144,3 +3144,22 @@ body {
 #content {
   display: none;
 }
+
+/* Define a class to set the aspect ratio for the image container */
+.image-container {
+  aspect-ratio: 16/9; /* Set the aspect ratio to 16:9 */
+  overflow: hidden; /* Ensure the image doesn't overflow its container */
+}
+
+/* Apply styles to the image within the container */
+.image-container img {
+  width: 100%; /* Ensure the image takes up the full width of the container */
+  height: 100%; /* Ensure the image takes up the full height of the container */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  transition: transform 0.3s, scale 0.3s; /* Add transition effects */
+}
+
+/* Optionally, you can add hover effects to the image */
+.image-container:hover img {
+  transform: rotate(6deg) scale(1.25); /* Example hover effect */
+}
